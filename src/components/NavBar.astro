@@ -1,0 +1,64 @@
+---
+const { title } = Astro.props;
+---
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/Yo">Sobre mí</a></li>
+      <li><a href="/blog">Blog</a></li>
+    </ul>
+  </nav>
+  <h1>{title}</h1>
+</header>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    text-decoration: underline;
+    line-height: 1;
+    font-size: 32px;
+    color: inherit;
+  }
+
+  a:active {
+    color: var(--color-active-text, blue);
+  }
+
+  a:hover {
+    color: var(--color-hover-text, aqua);
+  }
+
+  h1 {
+    color: inherit;
+  }
+
+  h1:active {
+    color: var(--color-active-text, blue);
+  }
+
+  h1:hover {
+    color: var(--color-hover-text, aqua);
+  }
+</style>

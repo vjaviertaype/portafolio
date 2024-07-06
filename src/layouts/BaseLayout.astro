@@ -1,0 +1,42 @@
+---
+import Navbar from "../components/NavBar.astro";
+
+const { title } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar title={title} />
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --color-hover-text: #ff9b00;
+    --color-active-text: #ff5b00;
+    --color-text: white;
+
+    --color-background: #332400;
+  }
+
+  html {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: normal;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-background, white);
+    color: var(--color-text, black);
+  }
+</style>
